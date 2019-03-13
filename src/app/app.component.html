@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="container">
-  <div id="content" ng-controller="movieDataController">
-    <button mat-button (click)="movieDataController()"> Call Api </button>
+  <app-sidebar>
+  </app-sidebar>
+  <div id="content">
+    <app-title-header></app-title-header>
+    <router-outlet></router-outlet>
   </div>
-
 </div>
-<router-outlet></router-outlet>

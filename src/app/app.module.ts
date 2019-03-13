@@ -6,11 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
+import { TitleHeaderComponent } from './title-header/title-header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TitleHeaderComponent,
+    SidebarComponent,
+    DataTableComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
