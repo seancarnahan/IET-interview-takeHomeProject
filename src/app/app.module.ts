@@ -11,7 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { HomeComponent } from './home/home.component';
 
-
+import { FilmService } from './services/film.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [FilmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {MatTableModule} from '@angular/material/table';
+import { Component, OnInit, Input } from '@angular/core';
+import { FilmService } from '../services/film.service';
+import { Observable } from 'rxjs';
+import { DataSource } from '@angular/cdk/collections';
+import { Film } from '../models/film.model';
 
 
 @Component({
@@ -8,10 +11,13 @@ import {MatTableModule} from '@angular/material/table';
   styleUrls: ['./data-table.component.scss']
 })
 export class DataTableComponent implements OnInit {
+  @Input() showMePartially: boolean;
+
+  displayedColumns = ['id', 'title', 'vote_average', 'release_date', 'original_language'];
 
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }
