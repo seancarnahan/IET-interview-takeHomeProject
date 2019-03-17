@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Film } from '../models/film.model';
-import { Observable } from 'rxjs';
+import { Films, Film } from '../models/film.model';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
@@ -11,7 +12,8 @@ export class FilmService {
 
   constructor(private http: HttpClient) { }
 
-  getFilms():Observable<Film[]>  {
-    return this.http.get<Film[]>(this.serviceUrl);
+  getFilms():Observable<Films>  {
+    return this.http.get<Films>(this.serviceUrl).map(data => data.results);
+
   }
 }

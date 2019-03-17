@@ -1,7 +1,10 @@
+export interface Films extends Array<Film> {
+  results: any;
+}
+
 export interface Film {
   id: any;
   title: String;
   vote_average: any;
-  release_data: String;
-  original_language: String;
+  release_date: String;
 }

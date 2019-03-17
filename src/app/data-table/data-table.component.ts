@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FilmService } from '../services/film.service';
-import { Observable } from 'rxjs';
+import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs/Observable';
 import { DataSource } from '@angular/cdk/collections';
 import { Film } from '../models/film.model';
 
@@ -11,13 +12,22 @@ import { Film } from '../models/film.model';
   styleUrls: ['./data-table.component.scss']
 })
 export class DataTableComponent implements OnInit {
-  @Input() showMePartially: boolean;
+  dataSource = new DataTableSource(this.filmService);
+  displayedColumns = ['id', 'title', 'vote_average', 'release_date'];
 
-  displayedColumns = ['id', 'title', 'vote_average', 'release_date', 'original_language'];
+  constructor(private filmService: FilmService) { }
 
-  constructor() { }
+  ngOnInit() {}
+}
 
-  ngOnInit() {
-
+export class DataTableSource extends DataSource<any> {
+  constructor(private filmService: FilmService) {
+    super();
   }
+
+  connect(): Observable<Film[]> {
+    return this.filmService.getFilms();
+  }
+
+  disconnect(){}
 }
