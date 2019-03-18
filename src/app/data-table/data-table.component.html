@@ -1,22 +1,25 @@
 <div> 
-    <mat-table [dataSource]="dataSource"> 
-          <ng-container matColumnDef="id">
+  <div id="dataRetriever" ng-controller="JsonController">
+    <a routerLink="data-table" mat-raised-button (click)="refreshData()" color="primary">refresh</a>
+  </div>
+  <mat-table [dataSource]="dataSource"> 
+        <ng-container matColumnDef="id">
                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell> 
-                  <mat-cell *matCellDef="let film"> {{film.id}} </mat-cell>
-          </ng-container> 
-          <ng-container matColumnDef="title"> 
-              <mat-header-cell *matHeaderCellDef> Title </mat-header-cell> 
-                    <mat-cell *matCellDef="let film"> {{film.title}} </mat-cell>
-          </ng-container>
+                <mat-cell *matCellDef="let film"> {{film.id}} </mat-cell>
+        </ng-container> 
+        <ng-container matColumnDef="title"> 
+            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell> 
+                  <mat-cell *matCellDef="let film"> {{film.title}} </mat-cell>
+        </ng-container>
            <ng-container matColumnDef="overview"> 
-              <mat-header-cell *matHeaderCellDef> Overview </mat-header-cell> 
-                    <mat-cell *matCellDef="let film"> {{film.overview}} </mat-cell> 
-          </ng-container> 
-          <ng-container matColumnDef="release_date"> 
-            <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell> 
-              <mat-cell *matCellDef="let film"> {{film.release_date}} </mat-cell> 
-          </ng-container> 
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row> 
-              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> 
-    </mat-table> 
+            <mat-header-cell *matHeaderCellDef> Overview </mat-header-cell> 
+                  <mat-cell *matCellDef="let film"> {{film.overview}} </mat-cell> 
+        </ng-container> 
+        <ng-container matColumnDef="release_date"> 
+          <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell> 
+            <mat-cell *matCellDef="let film"> {{film.release_date}} </mat-cell> 
+        </ng-container> 
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row> 
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> 
+  </mat-table> 
   </div> 
