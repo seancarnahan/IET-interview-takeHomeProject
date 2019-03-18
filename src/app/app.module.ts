@@ -12,6 +12,7 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { HomeComponent } from './home/home.component';
 
 import { FilmService } from './services/film.service';
+import { HighlightDirective } from './highlight.directive';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FilmService } from './services/film.service';
     TitleHeaderComponent,
     SidebarComponent,
     DataTableComponent,
-    HomeComponent
+    HomeComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
