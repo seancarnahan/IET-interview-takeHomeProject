@@ -12,6 +12,7 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { HomeComponent } from './home/home.component';
 
 import { FilmService } from './services/film.service';
+import { DisplayJsonComponent } from './display-json/display-json.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FilmService } from './services/film.service';
     SidebarComponent,
     DataTableComponent,
     HomeComponent,
+    DisplayJsonComponent,
   ],
   imports: [
     BrowserModule,

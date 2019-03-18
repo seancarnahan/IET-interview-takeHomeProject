@@ -7,4 +7,5 @@ export interface Film {
   title: String;
   vote_average: any;
   release_date: String;
+  overview: String;
 }

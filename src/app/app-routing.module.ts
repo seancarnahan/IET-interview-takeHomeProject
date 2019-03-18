@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DataTableComponent } from './data-table/data-table.component';
 import { HomeComponent } from './home/home.component';
+import { DisplayJsonComponent } from './display-json/display-json.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'data-table',
     component: DataTableComponent
+  },
+  {
+    path: 'display-json',
+    component: DisplayJsonComponent
   }
 ];
 

@@ -4,6 +4,7 @@ import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Observable';
 import { DataSource } from '@angular/cdk/collections';
 import { Film } from '../models/film.model';
+import { AggieFilm } from '../models/aggie-film';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Film } from '../models/film.model';
 })
 export class DataTableComponent implements OnInit {
   dataSource = new DataTableSource(this.filmService);
-  displayedColumns = ['id', 'title', 'vote_average', 'release_date'];
+  displayedColumns = ['id', 'title', 'overview', 'release_date'];
 
   constructor(private filmService: FilmService) { }
 
